@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeWithMaps"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:background="@color/custom_green">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/btn_logout"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="start"
+                    app:cardElevation="12dp"
+                    android:elevation="12dp"
+                    android:innerRadius="0dp"
+                    android:src="@drawable/logout"
+                    android:shape="ring"
+                    app:cardCornerRadius="75dp"
+                    android:layout_marginLeft="23dp"/>
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_toRightOf="@+id/logo"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="BFQuark"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    tools:ignore="RtlCompat" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/logo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/time_2"
+                    android:backgroundTint="#C0060B"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="13dp"
+                    app:cardCornerRadius="50dp"
+                    android:padding="1dp"
+                    android:layout_alignParentLeft="true" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.ismaeldivita.chipnavigation.ChipNavigationBar
+            android:id="@+id/navigation_bar"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="@drawable/navigation_bar"
+            android:elevation="2dp"
+            android:padding="8dp"
+            app:cnb_menuResource="@menu/navigation_bar"
+            tools:ignore="UnusedAttribute" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-13dp"
+            android:layout_below="@id/toolbar"
+            android:layout_above="@+id/navigation_bar">
+
+            <FrameLayout
+                android:visibility="visible"
+                android:id="@+id/fragmentContainer"
+                android:layoutDirection="locale"
+                android:animateLayoutChanges="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+            <!--<Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="Maps"
+                android:id="@+id/btn_map_2"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/button_border_1"/>-->
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:visibility="gone"
+                    android:layout_marginTop="13dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_gravity="center"/>
+
+            </RelativeLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_home"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/home_2"
+                android:textAlignment="center"
+                app:backgroundTint="#fff"
+                tools:ignore="DuplicateIds" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_search"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_home"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="3dp"
+                android:src="@drawable/search_4"
+                android:textAlignment="center"
+                app:backgroundTint="#fff"
+                tools:ignore="DuplicateIds" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout_2"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_home"
+                android:layout_toLeftOf="@+id/btn_search"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="3dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    app:cardCornerRadius="7dp">
+
+                    <EditText
+                        android:id="@+id/search_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/text_border_1"
+                        android:paddingRight="23dp"
+                        android:paddingLeft="23dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:hint="search..."
+                        android:textAlignment="viewStart" />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/click_to_search"
+                android:visibility="gone"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/btn_home"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="23dp"
+                android:layout_toLeftOf="@+id/relativeLayout_2"
+                android:src="@drawable/ok" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_refresh"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_search"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:src="@drawable/refresh_3"
+                android:textAlignment="center"
+                app:backgroundTint="#fff"
+                tools:ignore="DuplicateIds" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_client"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="100dp"
+                android:src="@drawable/time_3"
+                android:textAlignment="center"
+                app:backgroundTint="#fff"
+                tools:ignore="DuplicateIds" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+

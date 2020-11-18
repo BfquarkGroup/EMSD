@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    app:cnb_unselectedColor="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/home_2"
+        app:cnb_backgroundColor="@color/white"
+        app:cnb_iconColor="@color/custom_green"
+        app:cnb_textColor="@color/custom_green"/>
+
+    <item
+        android:id="@+id/list"
+        android:title="List"
+        android:icon="@drawable/list"
+        app:cnb_backgroundColor="@color/white"
+        app:cnb_iconColor="@color/custom_green"
+        app:cnb_textColor="@color/custom_green"/>
+
+    <item
+        android:id="@+id/map"
+        android:title="Maps"
+        android:icon="@drawable/earth_2"
+        app:cnb_backgroundColor="@color/white"
+        app:cnb_iconColor="@color/custom_green"
+        app:cnb_textColor="@color/custom_green"/>
+
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/person"
+        app:cnb_backgroundColor="@color/white"
+        app:cnb_iconColor="@color/custom_green"
+        app:cnb_textColor="@color/custom_green"/>
+
+</menu>
